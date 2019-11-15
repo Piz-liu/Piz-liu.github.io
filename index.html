@@ -1,0 +1,81 @@
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<style>
+body{text-align:center} 
+
+#divcss5{margin:0 auto} 
+
+img {
+width:100%
+}
+.c{
+font-size:30px
+}
+</style>
+<script type="text/javascript" src="http://test.genitechnology.com/manager/assets/js/jquery.min.js"></script>
+<body>
+<div class="divcss5">
+<span class="c" h="a"><a href="#">Caprini评估量表（外科）</a></span><br/><br/>
+<span class="c" h="b"><a href="#">Padua评估量表（内科）</a></span><br/><br/>
+<span class="c" h="c"><a href="#">门诊Khorana评估量表（肿瘤）</a></span><br/><br/>
+<span class="c" h="d"><a href="#">Wells—DVT评估量表</a></span><br/><br/>
+<span class="c" h="e"><a href="#">Wells—PE评估量表</a></span><br/><br/>
+</div>
+
+<div class="back" style="display:none">
+<div class="title"></div>
+<span style="font-size:35px;color:blue">返回</span>
+
+</div>
+<div  id ="a" class="img" style="display:none">
+<img src="./a.png"><br/>
+<img src="./a_1.png">
+</div>
+
+<div  id ="b" class="img" style="display:none" >
+<img src="./b.png">
+</div>
+
+<div  id ="c" class="img" style="display:none">
+<img src="./c_1.png">
+</div>
+
+<div  id ="d" class="img" style="display:none">
+<img src="./d_1.png"><br/>
+<img src="./d_2.png">
+</div>
+
+<div  id ="e" class="img" style="display:none">
+<img src="./e_1.png"><br/>
+<img src="./e_2.png">
+</div>
+
+</body>
+
+<script>
+
+ //给超出屏幕宽度的标签设置范围，用来处理宽度超出屏幕显示问题
+    $("*").each(function () {
+        var len = $(this).css("width").replace("px", '');
+        var maxwidth = $(document.body).width();
+        if (len > maxwidth) {
+            $(this).css("width", "100%");
+
+        }
+    });
+
+$(".c").click(function(){
+	$(".img").hide();
+	$(".divcss5").hide();
+	$(".back").show();
+	$(this).show()
+	var h = $(this).attr("h");
+	$('.title').html(this)
+	$("#"+h).show();
+});
+$(".back").click(function(){
+	$('.title').html('');
+	window.location.reload();
+});
+</script>
+</html>
